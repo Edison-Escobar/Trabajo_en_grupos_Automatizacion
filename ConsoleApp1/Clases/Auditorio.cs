@@ -6,7 +6,29 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1.Clases
 {
-    internal class Auditorio
+    public class Auditorio : Sala
     {
+        public bool TieneSonido { get; set; }
+
+        public Auditorio(string nombre, int capacidad, string ubicacion, bool sonido)
+            : base(nombre, capacidad, ubicacion)
+        {
+            TieneSonido = sonido;
+        }
+
+        public override bool Reservar(Evento evento)
+        {
+            if (Capacidad >= 50)
+            {
+                Console.WriteLine ($"Auditorio '{Nombre}' reservado para: {evento.Nombre}");
+                return true;
+            }
+            else
+            {
+                Console.WriteLine($"Auditorio '{Nombre}' rechazado (capacidad insuficiente).");
+                return false;
+            }
+
+        }
     }
 }

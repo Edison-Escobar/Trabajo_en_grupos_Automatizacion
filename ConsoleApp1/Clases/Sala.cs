@@ -8,5 +8,18 @@ namespace ConsoleApp1.Clases
 {
     public abstract class Sala
     {
+        public string Nombre { get; set; }
+        public int Capacidad { get; set; }
+        public string Ubicacion { set; get; }
+
+        public Sala(string nombre, int capacidad, string ubicacion) 
+        { 
+            Nombre = nombre;
+            Capacidad = capacidad;
+            Ubicacion = ubicacion;
+        }
+
+        public abstract bool Reservar(Evento evento);
+
     }
 }
