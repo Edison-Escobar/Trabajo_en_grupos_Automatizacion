@@ -8,6 +8,10 @@ namespace ConsoleApp1.Clases
 {
     public class Laboratorio : Sala
     {
+        public void Ejecutar()
+        {
+            Console.WriteLine("Ejecutando método de la clase Laboratorio.");
+        }
         public int CantidadComputadoras { get; set; }
 
         public Laboratorio(string nombre, int capacidad, string ubicacion, int computadoras)

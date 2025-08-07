@@ -20,7 +20,7 @@ namespace ConsoleApp1.Clases
         {
             if (Capacidad >= 50)
             {
-                Console.WriteLine ($"Auditorio '{Nombre}' reservado para: {evento.Nombre}");
+                Console.WriteLine($"Auditorio '{Nombre}' reservado para: {evento.Nombre}");
                 return true;
             }
             else
@@ -29,6 +29,15 @@ namespace ConsoleApp1.Clases
                 return false;
             }
 
+        }
+        public override string ToString()
+        {
+            return $"Auditorio: {Nombre}, Capacidad: {Capacidad}, Ubicacion: {Ubicacion}, Tiene Sonido: {TieneSonido}";
+        }
+        public override void VerDetalles()
+        {
+            base.VerDetalles();
+            Console.WriteLine($"Tiene Sonido: {TieneSonido}");
         }
     }
 }
